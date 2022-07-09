@@ -5,6 +5,7 @@ import {
   ChartItem,
   registerables,
 } from 'node_modules/chart.js';
+import { PieChartService } from '../Services/pie-chart.service';
 
 @Component({
   selector: 'app-my-chart',
@@ -12,10 +13,12 @@ import {
   styleUrls: ['./my-chart.component.css'],
 })
 export class MyChartComponent implements OnInit {
-  constructor() {}
+  constructor(private postSrv:PieChartService) {}
 
   ngOnInit(): void {
+
     this.createChart();
+    this.postSrv.getChart().subscribe()
   }
 
   createChart(): void {
