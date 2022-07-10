@@ -1,4 +1,4 @@
 export interface IPieChart {
-  monthname: string;
+  monthName: string;
   count: number;
 }

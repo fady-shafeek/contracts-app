@@ -2,3 +2,14 @@
     <canvas id="my-chart">
     </canvas>
 </div>
+<table>
+    <tr>
+        <th>Month</th>
+        <th>Count</th>
+    </tr>
+
+    <tr *ngFor="let rec of lstData">
+        <td>{{rec.monthName}}</td>
+        <td>{{rec.count}}</td>
+    </tr>
+</table>

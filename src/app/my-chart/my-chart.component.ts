@@ -5,6 +5,8 @@ import {
   ChartItem,
   registerables,
 } from 'node_modules/chart.js';
+import { PieChart } from '../Classes/PieChart';
+import { IPieChart } from '../Models/ipie-chart';
 import { PieChartService } from '../Services/pie-chart.service';
 
 @Component({
@@ -13,12 +15,13 @@ import { PieChartService } from '../Services/pie-chart.service';
   styleUrls: ['./my-chart.component.css'],
 })
 export class MyChartComponent implements OnInit {
-  constructor() {}
-  //constructor(private postSrv:PieChartService) {}
-  ngOnInit(): void {
+  constructor(private _pieChart: PieChartService) {}
 
+  lstData: PieChart[] = [];
+  ngOnInit(): void {
+    this._pieChart.getChart().subscribe(dataa => {this.lstData = dataa;});
+    console.log(this.lstData)
     this.createChart();
-    //this.postSrv.getChart().subscribe();
   }
 
   createChart(): void {
@@ -44,15 +47,14 @@ export class MyChartComponent implements OnInit {
     };
 
     const config: ChartConfiguration = {
-        type: 'line',
-        data: data,
-        options: options
-      }
-      const chartItem: ChartItem = document.getElementById('my-chart') as ChartItem
+      type: 'line',
+      data: data,
+      options: options,
+    };
+    const chartItem: ChartItem = document.getElementById(
+      'my-chart'
+    ) as ChartItem;
 
-      new Chart(chartItem, config)
-
-
-
+    new Chart(chartItem, config);
   }
 }
