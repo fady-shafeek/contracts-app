@@ -13,12 +13,12 @@ import { PieChartService } from '../Services/pie-chart.service';
   styleUrls: ['./my-chart.component.css'],
 })
 export class MyChartComponent implements OnInit {
-  constructor(private postSrv:PieChartService) {}
-
+  constructor() {}
+  //constructor(private postSrv:PieChartService) {}
   ngOnInit(): void {
 
     this.createChart();
-    this.postSrv.getChart().subscribe()
+    //this.postSrv.getChart().subscribe();
   }
 
   createChart(): void {

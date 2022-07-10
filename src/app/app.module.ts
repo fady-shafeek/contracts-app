@@ -16,6 +16,7 @@ import { MyChartComponent } from './my-chart/my-chart.component';
     NgbPaginationModule, 
     NgbAlertModule,
     NgbModule,
+
     
   ],
   providers: [],
