@@ -7,10 +7,12 @@ import {NgbPaginationModule, NgbAlertModule, NgbModule} from '@ng-bootstrap/ng-b
 import { MyChartComponent } from './my-chart/my-chart.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PieChartService } from './Services/pie-chart.service';
+import { CustomersComponent } from './customers/customers.component';
 @NgModule({
   declarations: [
     AppComponent,
-    MyChartComponent  ],
+    MyChartComponent,
+    CustomersComponent  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

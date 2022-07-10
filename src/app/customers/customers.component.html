@@ -1,0 +1,32 @@
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Customer Name</th>
+    <th scope="col">Service Type</th>
+    <th scope="col">Contract Date</th>
+    <th scope="col">Expiry Date</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let res of result">
+    <td scope="row">{{ res.customerName }}</td>
+    <td>{{ res.customerName }}</td>
+    <td>{{ res.serviceType}}</td>
+    <td>{{ res.contractDate | date }}</td>
+    <td>{{ res.contractExpiryDate | date }}</td>
+  </tr>
+  </tbody>
+</table>
+
+<!-- <div class="d-flex justify-content-between p-2">
+  <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="refreshCountries()">
+  </ngb-pagination>
+
+  <select class="form-select" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="refreshCountries()">
+    <option [ngValue]="2">2 items per page</option>
+    <option [ngValue]="4">4 items per page</option>
+    <option [ngValue]="6">6 items per page</option>
+  </select>
+</div> -->

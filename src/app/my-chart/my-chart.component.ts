@@ -18,22 +18,23 @@ export class MyChartComponent implements OnInit {
   constructor(private _pieChart: PieChartService) {}
 
   lstData: PieChart[] = [];
-  ngOnInit(): void {
-    this._pieChart.getChart().subscribe(dataa => {this.lstData = dataa;});
-    console.log(this.lstData)
-    this.createChart();
-  }
 
-  createChart(): void {
+  ngOnInit(): void {
+    this._pieChart.getChart().subscribe((res) => {
+      this.lstData = res;
+      let x = this.lstData.map(function(t){return t.monthName;})
+      let y = this.lstData.map(function(t){return t.count;})
+
+      //Chart Code
     Chart.register(...registerables);
     const data = {
-      labels: ['January', 'February', 'March', 'April', 'May'],
+      labels: x,
       datasets: [
         {
-          label: 'My First dataset',
+          label: 'Contracts Count',
           backgroundColor: 'rgb(255, 99, 132)',
           borderColor: 'rgb(255, 99, 132)',
-          data: [10, 5, 2, 20, 30, 45],
+          data: y,
         },
       ],
     };
@@ -56,5 +57,6 @@ export class MyChartComponent implements OnInit {
     ) as ChartItem;
 
     new Chart(chartItem, config);
+  });
   }
 }
