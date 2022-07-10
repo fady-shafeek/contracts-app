@@ -31,7 +31,7 @@ export class MyChartComponent implements OnInit {
       labels: x,
       datasets: [
         {
-          label: 'Contracts Count',
+          label: 'Contracts Count at 2020',
           backgroundColor: 'rgb(255, 99, 132)',
           borderColor: 'rgb(255, 99, 132)',
           data: y,

@@ -9,9 +9,11 @@ import { PieChart } from '../Classes/PieChart';
 })
 export class PieChartService {
   constructor(private httpclient: HttpClient) {}
-  //private _url: string = 'https://localhost:7052/ChartPerMonthPerYear?year=2020';
   getChart(): Observable<any> {
     return this.httpclient.get('https://localhost:7052/ChartPerMonthPerYear');
+  }
+  getPieChart(): Observable<any> {
+    return this.httpclient.get('https://localhost:7052/CustomerPerService');
   }
 
 

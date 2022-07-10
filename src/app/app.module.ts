@@ -8,11 +8,15 @@ import { MyChartComponent } from './my-chart/my-chart.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PieChartService } from './Services/pie-chart.service';
 import { CustomersComponent } from './customers/customers.component';
+import { PieChartComponent } from './pie-chart/pie-chart.component';
+import { NgChartsModule } from 'ng2-charts';
+
 @NgModule({
   declarations: [
     AppComponent,
     MyChartComponent,
-    CustomersComponent  ],
+    CustomersComponent,
+    PieChartComponent  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -20,6 +24,8 @@ import { CustomersComponent } from './customers/customers.component';
     NgbAlertModule,
     NgbModule,
     HttpClientModule,
+    NgChartsModule,
+    
     
 
     

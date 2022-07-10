@@ -7,6 +7,6 @@ import { catchError, Observable, throwError } from 'rxjs';
 export class CustomersService {
   constructor(private httpclient: HttpClient) {}
   getCustomers(pagenumber?: string, pagesize?: string ): Observable<any> {
-    return this.httpclient.get(`https://localhost:7052/Contracts?pagesize=${10}&pagenumber=${1}`);
+    return this.httpclient.get(`https://localhost:7052/Contracts?pagesize=${20}&pagenumber=${1}`);
   }
 }
